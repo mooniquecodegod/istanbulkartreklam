@@ -32,8 +32,21 @@
     .centered-wrapper {
       display: flex;
       justify-content: center;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    .logo-and-button {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      height: 100vh;
+      gap: 20px;
+    }
+
+    .istanbulkart-logo {
+      max-width: 300px;
+      height: auto;
     }
 
     .official-link {
@@ -112,9 +125,12 @@
 <body>
 
   <div class="centered-wrapper">
-    <a href="https://www.istanbulkart.istanbul/" class="official-link" target="_blank">
-      Resmi İstanbulkart Sitesi
-    </a>
+    <div class="logo-and-button">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/%C4%B0stanbulkart_logo.svg/2560px-%C4%B0stanbulkart_logo.svg.png" alt="İstanbulkart Logo" class="istanbulkart-logo" />
+      <a href="https://www.istanbulkart.istanbul/" class="official-link" target="_blank">
+        Resmi İstanbulkart Sitesi
+      </a>
+    </div>
   </div>
 
   <div class="container">
