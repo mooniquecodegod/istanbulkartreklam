@@ -16,7 +16,6 @@
       background-color: #f2f8ff;
       color: #1a1a1a;
       animation: fadeIn 2s ease-in;
-      padding: 30px;
     }
 
     @keyframes fadeIn {
@@ -27,6 +26,14 @@
     .container {
       max-width: 1000px;
       margin: 0 auto;
+      padding: 30px;
+    }
+
+    .centered-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
     .official-link {
@@ -39,7 +46,6 @@
       text-decoration: none;
       box-shadow: 0 0 10px #00bfff88;
       transition: all 0.3s ease;
-      margin-bottom: 60px;
     }
 
     .official-link:hover {
@@ -104,14 +110,14 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <div style="text-align: center;">
-      <a href="https://www.istanbulkart.istanbul/" class="official-link" target="_blank">
-        Resmi İstanbulkart Sitesi
-      </a>
-    </div>
 
-    <div style="height: 40px;"></div>
+  <div class="centered-wrapper">
+    <a href="https://www.istanbulkart.istanbul/" class="official-link" target="_blank">
+      Resmi İstanbulkart Sitesi
+    </a>
+  </div>
+
+  <div class="container">
 
     <section class="timeline">
       <h2>🕒 Zaman Tüneli</h2>
