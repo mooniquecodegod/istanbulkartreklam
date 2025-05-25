@@ -1,179 +1,128 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>İstanbulkart'ın Geçmişi</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Çınar Halı Yıkama & İstanbulkart Başvuru</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f2f8ff;
-      color: #1a1a1a;
-      animation: fadeIn 2s ease-in;
+      background: #f2f2f2;
+      color: #333;
+      overflow-x: hidden;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 30px;
-    }
-
-    .centered-wrapper {
+    .loader {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background: #fff;
       display: flex;
       justify-content: center;
-      margin-top: 40px;
-      margin-bottom: 40px;
-    }
-
-    .logo-and-button {
-      text-align: center;
-      display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 20px;
+      z-index: 9999;
     }
 
-    .istanbulkart-logo {
-      max-width: 300px;
-      height: auto;
+    .loader span {
+      width: 50px;
+      height: 50px;
+      border: 5px solid #007BFF;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
     }
 
-    .official-link {
-      display: inline-block;
-      background-color: #007acc;
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    header {
+      background: #007BFF;
       color: white;
-      padding: 12px 24px;
-      font-size: 1rem;
-      border-radius: 8px;
-      text-decoration: none;
-      box-shadow: 0 0 10px #00bfff88;
-      transition: all 0.3s ease;
-    }
-
-    .official-link:hover {
-      background-color: #005fa3;
-      transform: scale(1.05);
-    }
-
-    section {
-      margin-bottom: 40px;
-      background-color: #ffffff;
       padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0, 170, 255, 0.2);
+      text-align: center;
+      position: relative;
     }
 
-    section h2 {
-      color: #007acc;
-      font-size: 2rem;
+    .cta-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #FFC107;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #e0a800;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2, h3 {
       margin-bottom: 15px;
-      text-shadow: 0 0 3px #b3e5ff;
     }
 
-    .timeline-item {
+    p {
       margin-bottom: 20px;
-      padding: 15px;
-      background-color: #f0faff;
-      border-left: 4px solid #00bfff;
-      border-radius: 6px;
-    }
-
-    .timeline-item h3 {
-      color: #007acc;
-      font-size: 1.3rem;
-      margin-bottom: 8px;
-    }
-
-    .timeline-item p {
-      color: #333333;
       line-height: 1.6;
-    }
-
-    .features ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    .features li {
-      background-color: #f0faff;
-      padding: 12px;
-      margin-bottom: 10px;
-      border-left: 4px solid #00bfff;
-      border-radius: 6px;
-      text-align: left;
-      color: #333;
-    }
-
-    .future p {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      color: #333;
     }
   </style>
+  <script>
+    window.addEventListener("load", function () {
+      document.querySelector(".loader").style.display = "none";
+    });
+  </script>
 </head>
 <body>
-
-  <div class="centered-wrapper">
-    <div class="logo-and-button">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/%C4%B0stanbulkart_logo.svg/2560px-%C4%B0stanbulkart_logo.svg.png" alt="İstanbulkart Logo" class="istanbulkart-logo" />
-      <a href="https://cinarinyonlendirmesi.blogspot.com/2025/05/wsdfasfbbb.html" class="official-link" target="_blank">
-        Resmi İstanbulkart Sitesi
-      </a>
-    </div>
+  <div class="loader">
+    <span></span>
   </div>
-
-  <div class="container">
-
-    <section class="timeline">
-      <h2>🕒 Zaman Tüneli</h2>
-      <div class="timeline-item">
-        <h3>2009 - İstanbulkart'ın Lansmanı</h3>
-        <p>İstanbulkart, BELBİM tarafından hayata geçirildi. Akbil'in yerini alan bu kart, İstanbul’daki toplu taşıma sistemlerinde temassız ödeme sunarak büyük bir yenilik getirdi.</p>
-      </div>
-      <div class="timeline-item">
-        <h3>2015 - Akbil Tarihe Karışıyor</h3>
-        <p>Akbil sistemi resmi olarak sonlandırıldı. İstanbulkart, İstanbul genelindeki tüm ulaşım araçlarında zorunlu hale geldi.</p>
-      </div>
-      <div class="timeline-item">
-        <h3>2021 - Mobil İstanbulkart</h3>
-        <p>İstanbulkart Mobil uygulaması ile QR kodla geçiş, bakiye sorgulama ve yükleme, otomatik talimat gibi işlemler mümkün hale geldi. Temassız dönem hızla dijitalleşti.</p>
-      </div>
-      <div class="timeline-item">
-        <h3>2023 - Perakende Ödemeleri</h3>
-        <p>İstanbulkart artık marketlerde ve e-ticaret sitelerinde de kullanılabilir hale geldi. Bir ulaşım kartı olmaktan çıkarak şehir yaşam kartına dönüştü.</p>
-      </div>
-      <div class="timeline-item">
-        <h3>2024 - Dijital Cüzdan Özelliği</h3>
-        <p>İstanbulkart, mobil cüzdan özellikleriyle para transferi, mikro kredi ve fatura ödeme gibi işlevleri desteklemeye başladı.</p>
-      </div>
-    </section>
-
-    <section class="features">
-      <h2>✨ Öne Çıkan Özellikler</h2>
+  <header>
+    <h1>Çınar Halı Yıkama & İstanbulkart Başvuru</h1>
+    <button class="cta-button" onclick="window.location.href='#basvuru'">Başvurularınız İçin Tıklayın</button>
+  </header>
+  <main>
+    <section>
+      <h2>Çınar Halı Yıkama: Halılarınız Emin Ellerde</h2>
+      <p>Halılar, evlerimizin en çok kirlenen ama aynı zamanda temizliği en zahmetli eşyalarıdır. Toz, mite, leke ve bakteriler zamanla halının dokusuna yerleşir. <strong>Çınar Halı Yıkama</strong>, bu soruna profesyonel çözümler sunarak sağlıklı ve hijyenik yaşam alanları oluşturmayı hedefliyor.</p>
       <ul>
-        <li>Toplu taşıma araçlarında temassız ödeme</li>
-        <li>Market ve anlaşmalı iş yerlerinde ödeme imkanı</li>
-        <li>Mobil uygulama üzerinden QR kod ile geçiş</li>
-        <li>HES Kodu entegrasyonu (pandemi dönemi)</li>
-        <li>Temassız yükleme noktaları ve NFC destekli işlemler</li>
+        <li>Profesyonel ekipmanlar ve kaliteli temizlik ürünleri</li>
+        <li>Kapıdan alım ve teslimat hizmeti</li>
+        <li>Zamanında teslimat ve müşteri memnuniyeti</li>
       </ul>
     </section>
 
-    <section class="future">
-      <h2>🔮 Geleceğe Bakış</h2>
-      <p>İstanbulkart'ın geleceğinde, blockchain destekli ödeme sistemleri, dijital kimlik entegrasyonu ve uluslararası ödeme geçişleri gibi devrim niteliğinde projeler yer alıyor.</p>
+    <section>
+      <h2>İstanbulkart Başvurusu: Ulaşımda Kolaylık</h2>
+      <p><strong>İstanbulkart</strong>, İstanbul'da toplu taşıma sisteminin bel kemiğidir. Şehir içi otobüs, metro, tramvay ve vapur gibi araçlarda geçerli olan bu kart sayesinde yolculuklar hem ekonomik hem de pratik hale gelir.</p>
+      <ul>
+        <li>Online veya fiziki başvuru seçenekleri</li>
+        <li>İndirimli tarife avantajları</li>
+        <li>Temassız, güvenli ve hijyenik kullanım</li>
+      </ul>
+      <p id="basvuru">Başvuru yapmak için <a href="https://kart.istanbul" target="_blank">kart.istanbul</a> adresini ziyaret edebilirsiniz.</p>
     </section>
-  </div>
+  </main>
 </body>
 </html>
